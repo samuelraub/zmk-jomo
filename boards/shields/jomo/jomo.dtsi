@@ -1,5 +1,5 @@
 #include <dt-bindings/zmk/matrix_transform.h> // Put this with the other includes at the top of your dtsi
-#include "jomo-layouts.dtsi" // Physical layout
+#include "jomo-layouts.dtsi"
 
 / {
     kscan0: kscan0 {
@@ -24,5 +24,11 @@
         //                 |LKey16 |LKey17 |LKey18     RKey16
                             RC(3,2) RC(3,3) RC(3,4)    RC(3,5) RC(3,6) RC(3,7)
         >;
+    };
+};
+
+/ {
+    chosen {
+        zmk,physical-layout = &physical_layout0;
     };
 };
