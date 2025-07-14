@@ -18,5 +18,14 @@
 #     artifact-name: corne_left_with_studio
 #
 ---
-board: ["nice_nano_v2"]
-shield: ["jomo_left", "jomo_right"]
+include:
+  - board: nice_nano_v2
+    shield: jomo_left
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: jomo_left_with_studio
+  - board: nice_nano_v2
+    shield: jomo_right
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: jomo_right_with_studio
