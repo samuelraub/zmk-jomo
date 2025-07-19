@@ -32,3 +32,10 @@
         zmk,physical-layout = &physical_layout0;
     };
 };
+
+/ {
+    soft_off_wakers {
+        compatible = "zmk,soft-off-wakeup-sources";
+        wakeup-sources = <&kscan0>;
+    };
+};
