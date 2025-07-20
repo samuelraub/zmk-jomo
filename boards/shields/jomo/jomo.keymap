@@ -77,7 +77,7 @@
 
         tmux_layer { // Layer 1
             bindings = <
-                &none            &none           &none          &none           &none        &none        &none          &none           &none           &none
+                &bootloader      &none           &none          &none           &none        &none        &none          &none           &none           &none
                 &kp LSHIFT       &kp LCTRL       &kp LALT       &kp LGUI        &none        &none        &none          &kp LC(A)       &none           &none
                 &none            &none           &none          &none           &none        &none        &tmux N1       &tmux N2        &tmux N3        &none
                                                  &none          &none           &none        &none        &none          &none
@@ -122,7 +122,7 @@
 
         media_layer { // Layer 6
             bindings = <
-                &none            &none           &none          &none           &none        &none        &none          &none           &none           &none
+                &none            &none           &none          &none           &none        &none        &none          &none           &none           &bootloader
                 &kp C_BRI_DN     &kp C_BRI_UP    &kp C_VOL_DN   &kp C_VOL_UP    &kp C_MUTE   &none        &kp RGUI       &kp RALT        &kp RCTRL       &kp RSHIFT
                 &none            &none           &none          &none           &none        &none        &none          &none           &none           &none
                                                  &none          &none           &none        &none        &none          &none
