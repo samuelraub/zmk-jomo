@@ -123,7 +123,7 @@
         media_layer { // Layer 6
             bindings = <
                 &none            &none           &none          &none           &none        &none        &none          &none           &none           &none
-                &kp C_BRI_UP     &kp C_BRI_DN    &kp C_VOL_DN   &kp C_VOL_UP    &kp C_MUTE   &none        &kp RGUI       &kp RALT        &kp RCTRL       &kp RSHIFT
+                &kp C_BRI_DN     &kp C_BRI_UP    &kp C_VOL_DN   &kp C_VOL_UP    &kp C_MUTE   &none        &kp RGUI       &kp RALT        &kp RCTRL       &kp RSHIFT
                 &none            &none           &none          &none           &none        &none        &none          &none           &none           &none
                                                  &none          &none           &none        &none        &none          &none
             >;
