@@ -16,7 +16,7 @@
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_R THUMBS>; // List of keys on the right side of the keyboard
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;
         };
         hmr: home_row_mod_right {
@@ -27,7 +27,7 @@
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_L THUMBS>; // List of keys on the left side of the keyboard
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;
         };
     };
@@ -40,6 +40,7 @@
             #binding-cells = <1>;
             bindings
                 = <&macro_tap &kp LC(A)>
+                , <&macro_param_1to1>
                 , <&macro_tap &kp MACRO_PLACEHOLDER>
                 ;
         };
@@ -95,7 +96,7 @@
 
         ctl_layer { // Layer 3
             bindings = <
-                &soft_off        &none           &none          &none           &none        &none        &none          &none           &none           &none
+                &soft_off        &none           &none          &none           &none        &none        &kp Z          &none           &none           &none
                 &none            &none           &none          &none           &none        &none        &msc SCRL_LEFT &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_RIGHT
                 &none            &none           &none          &none           &none        &none        &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_UP    &mmv MOVE_RIGHT
                                                  &none          &none           &none        &mkp MCLK    &mkp LCLK      &mkp RCLK
