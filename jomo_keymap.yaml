@@ -20,7 +20,7 @@ layers:
     - {t: ESC, h: num}
     - {t: DEL, h: media}
   tmux:
-  - ['&bootloader', '', '', '', '', '', '', '', '', '']
+  - ['&bootloader', '', '', '', '', '', '', '&tmux_copy', '', '']
   - [LSHIFT, LCTRL, LALT, LGUI, '', '', '', Ctl+A, '', '']
   - ['&sys_reset', '', '', '', '', '', '&tmux N1', '&tmux N2', '&tmux N3', '']
   - - {type: held}
