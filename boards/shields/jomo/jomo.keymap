@@ -50,6 +50,15 @@
                 , <&macro_tap &kp MACRO_PLACEHOLDER>
                 ;
         };
+
+        tmux_copy: tmux_copy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LC(A)>
+                , <&macro_tap &kp Y>
+                ;
+        };
     };
 };
 
@@ -94,7 +103,7 @@
 
         tmux_layer { // Layer 1
             bindings = <
-                &bootloader      &none           &none          &none           &none        &none        &none          &none           &none           &none
+                &bootloader      &none           &none          &none           &none        &none        &none          &tmux_copy           &none           &none
                 &kp LSHIFT       &kp LCTRL       &kp LALT       &kp LGUI        &none        &none        &none          &kp LC(A)       &none           &none
                 &sys_reset       &none           &none          &none           &none        &none        &tmux N1       &tmux N2        &tmux N3        &none
                                                  &none          &none           &none        &none        &none          &none

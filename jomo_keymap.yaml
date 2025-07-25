@@ -1,0 +1,86 @@
+layout: {zmk_keyboard: jomo}
+layers:
+  default:
+  - [Q, W, F, P, B, J, L, U, Y, '''']
+  - - {t: A, h: LSHIFT}
+    - {t: R, h: LCTRL}
+    - {t: S, h: LALT}
+    - {t: T, h: LGUI}
+    - G
+    - M
+    - {t: N, h: RGUI}
+    - {t: E, h: RALT}
+    - {t: I, h: RCTRL}
+    - {t: O, h: RSHIFT}
+  - [Z, X, C, D, V, K, H, ',', ., /]
+  - - {t: BSPC, h: tmux}
+    - {t: SPACE, h: nav}
+    - {t: TAB, h: ctl}
+    - {t: RET, h: sym}
+    - {t: ESC, h: num}
+    - {t: DEL, h: media}
+  tmux:
+  - ['&bootloader', '', '', '', '', '', '', '', '', '']
+  - [LSHIFT, LCTRL, LALT, LGUI, '', '', '', Ctl+A, '', '']
+  - ['&sys_reset', '', '', '', '', '', '&tmux N1', '&tmux N2', '&tmux N3', '']
+  - - {type: held}
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+  nav:
+  - ['', '', '', '', '', '', Gui+V, Gui+C, Gui+X, '']
+  - [LSHIFT, LCTRL, LALT, LGUI, '', '&caps_word', LEFT, DOWN, UP, RIGHT]
+  - ['', '', '', '', '', '', '', '', '', '']
+  - - ''
+    - {type: held}
+    - ''
+    - ''
+    - ''
+    - ''
+  ctl:
+  - ['&soft_off', '', '', '', '', '', '', '', '', '']
+  - ['', '', '', '', '', '', '&msc SCRL_LEFT', '&msc SCRL_UP', '&msc SCRL_DOWN', '&msc SCRL_RIGHT']
+  - [BT CLR ALL, '', '', '', '', '', '&mmv MOVE_LEFT', '&mmv MOVE_DOWN', '&mmv MOVE_UP', '&mmv MOVE_RIGHT']
+  - - ''
+    - ''
+    - {type: held}
+    - '&mkp MCLK'
+    - '&mkp LCLK'
+    - '&mkp RCLK'
+  sym:
+  - ['{', '&', '*', '', '}', '', '', '', '', '']
+  - [':', $, '%', ^, +, '', RGUI, RALT, RCTRL, RSHIFT]
+  - ['~', '!', '@', '#', '|', '', '', '', '', '']
+  - - (
+    - )
+    - _
+    - {type: held}
+    - ''
+    - ''
+  num:
+  - ['[', '7', '8', '9', ']', '', '', '', '', '']
+  - [;, '4', '5', '6', '=', '', RGUI, RALT, RCTRL, RSHIFT]
+  - ['`', '1', '2', '3', \, '', '', ',', ., /]
+  - - ''
+    - '0'
+    - '-'
+    - ''
+    - {type: held}
+    - ''
+  media:
+  - ['', '', '', '', '', '', '', '', '', '&bootloader']
+  - [BRI DN, BRI UP, VOL DN, VOL UP, MUTE, '', RGUI, RALT, RCTRL, RSHIFT]
+  - ['', '', '', '', '', '', '', '', '', '&sys_reset']
+  - - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - {type: held}
+combos:
+- p: [1, 2]
+  k: {t: LSHIFT, h: sticky}
+- p: [7, 8]
+  k: {t: RSHIFT, h: sticky}
