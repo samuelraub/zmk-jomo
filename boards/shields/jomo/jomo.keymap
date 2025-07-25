@@ -42,9 +42,10 @@
         tmux: tmux {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
+            wait-ms = <250>;
             bindings
                 = <&macro_tap &kp RA(T)>
-                , <&macro_wait_time 100>
+                , <&macro_wait_time 20>
                 , <&macro_tap &kp LC(A)>
                 , <&macro_param_1to1>
                 , <&macro_tap &kp MACRO_PLACEHOLDER>
