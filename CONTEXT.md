@@ -50,3 +50,10 @@ command, so it works from any app.
 A tmux-layer key that acts on whatever has focus, without summoning kitty; the
 pane arrows.
 _Avoid_: plain key
+
+## Nav layer
+
+**Move-paste**:
+The Finder paste that moves the copied files instead of duplicating them (⌥⌘V);
+Finder's stand-in for cutting files, which ⌘X does not do.
+_Avoid_: cut-paste, file cut

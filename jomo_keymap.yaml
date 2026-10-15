@@ -30,9 +30,9 @@ layers:
     - ''
     - ''
   nav:
-  - ['', '', '', '', '', '', Gui+V, Gui+C, Gui+X, '']
+  - ['', '', '', '', '', Gui+Z, Gui+V, Gui+C, Gui+X, Gui+Sft+Z]
   - [LSHIFT, LCTRL, LALT, LGUI, '', '&caps_word', LEFT, DOWN, UP, RIGHT]
-  - ['', '', '', '', '', '', '', '', '', '']
+  - ['', '', '', '', '', '', AltGr+Gui+V, PG DN, PG UP, '']
   - - ''
     - {type: held}
     - ''
