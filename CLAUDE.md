@@ -61,9 +61,13 @@ The repo is both the ZMK config (`config/`) and a Zephyr module
   updating the `&ltl`/`&ltr` arguments.
 - The layer-tap's own thumb on each layer is left as `&none` (shown as "held"
   in the diagram).
-- The `tmux` macros send `RA(T)` first, then the `C-a` prefix. ⌥T is an Alfred
-  hotkey (AppSwitcher workflow) that focuses kitty, so they work from any app;
-  `&tmux_copy` skips it and needs kitty focused already.
+- The `&tmux`/`&tmux_prefix` macros (summoning keys, see `CONTEXT.md`) send
+  `RA(T)` first, then the `C-a` prefix. ⌥T is an Alfred hotkey (AppSwitcher
+  workflow) that focuses kitty, so they work from any app. The pane arrows are
+  in-place keys: plain `C-arrow`, which vim-tmux-navigator routes across nvim
+  splits and tmux panes; skipping ⌥T avoids its ~250 ms wait.
+- The tmux layer is right-hand only: `ltl` counts only right-hand keys as hold
+  triggers, so a quick left-hand tap under it resolves to the thumb's tap.
 
 ## Host-side setup (macOS)
 
