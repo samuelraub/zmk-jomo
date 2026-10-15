@@ -22,7 +22,7 @@ layers:
   tmux:
   - ['&bootloader', '', '', '', '', '', '', '&tmux_copy', '', '']
   - [LSHIFT, LCTRL, LALT, LGUI, '', '', '', Ctl+A, '', '']
-  - ['&sys_reset', '', '', '', '', '', '&tmux N1', '&tmux N2', '&tmux N3', '']
+  - ['&sys_reset', '', '', '', '', '', '&tmux N1', '&tmux N2', '&tmux N3', '&tmux N4']
   - - {type: held}
     - ''
     - ''
