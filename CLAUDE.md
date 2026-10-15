@@ -60,4 +60,28 @@ The repo is both the ZMK config (`config/`) and a Zephyr module
   updating the `&ltl`/`&ltr` arguments.
 - The layer-tap's own thumb on each layer is left as `&none` (shown as "held"
   in the diagram).
-- The `tmux` macros send `RA(T)` first, then the `C-a` prefix.
+- The `tmux` macros send `RA(T)` first, then the `C-a` prefix. ⌥T is an Alfred
+  hotkey (AppSwitcher workflow) that focuses kitty, so they work from any app;
+  `&tmux_copy` skips it and needs kitty focused already.
+
+## Host-side setup (macOS)
+
+Alfred's AppSwitcher workflow binds ⌥+key to launch/focus an app: ⌥T kitty,
+⌥G Chrome, ⌥B Firefox, ⌥F Finder, ⌥C Calendar, ⌥M Thunderbird, ⌥L Signal,
+⌥1 1Password. Keymap bindings that switch apps should send these (`RA(<key>)`)
+rather than define new hotkeys. With the opposite-hand home-row mods, ⌥ for a
+left-hand letter comes from the right hand (hold E) and vice versa (hold S).
+
+## Agent skills
+
+### Issue tracker
+
+Issues live in GitHub Issues for `samuelraub/zmk-jomo`, via the `gh` CLI. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+The five default labels: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: one `CONTEXT.md` and `docs/adr/` at the repo root. See `docs/agents/domain.md`.
