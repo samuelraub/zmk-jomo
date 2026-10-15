@@ -6,6 +6,8 @@
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
         wakeup-source;
+        // Switches bounce 5–7 ms after release (#6).
+        debounce-release-ms = <15>;
     };
 };
 
