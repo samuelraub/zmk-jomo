@@ -105,6 +105,19 @@
             key-positions = <7 8>;
             bindings = <&sk RSHIFT>;
         };
+        // The idle guard keeps rolls like "would" and "value" from firing it.
+        combo_caps_word_l {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
+            key-positions = <2 3>;
+            bindings = <&caps_word>;
+        };
+        combo_caps_word_r {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
+            key-positions = <6 7>;
+            bindings = <&caps_word>;
+        };
     };
 };
 

@@ -301,6 +301,14 @@ path.combo {
 <text x="679" y="35" class="combo tap">RSHIFT</text>
 <text x="679" y="46" class="combo hold">sticky</text>
 </g>
+<g class="combo combopos-2">
+<rect rx="6" ry="6" x="154" y="29" width="28" height="26" class="combo"/>
+<text x="168" y="42" class="combo tap"><tspan style="font-size: 70%">&amp;caps_word</tspan></text>
+</g>
+<g class="combo combopos-3">
+<rect rx="6" ry="6" x="609" y="29" width="28" height="26" class="combo"/>
+<text x="623" y="42" class="combo tap"><tspan style="font-size: 70%">&amp;caps_word</tspan></text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 342)" class="layer-tmux">
@@ -471,6 +479,14 @@ path.combo {
 <text x="679" y="35" class="combo tap">RSHIFT</text>
 <text x="679" y="46" class="combo hold">sticky</text>
 </g>
+<g class="combo combopos-2">
+<rect rx="6" ry="6" x="154" y="29" width="28" height="26" class="combo"/>
+<text x="168" y="42" class="combo tap"><tspan style="font-size: 70%">&amp;caps_word</tspan></text>
+</g>
+<g class="combo combopos-3">
+<rect rx="6" ry="6" x="609" y="29" width="28" height="26" class="combo"/>
+<text x="623" y="42" class="combo tap"><tspan style="font-size: 70%">&amp;caps_word</tspan></text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 683)" class="layer-nav">
@@ -618,6 +634,14 @@ path.combo {
 <rect rx="6" ry="6" x="665" y="22" width="28" height="26" class="combo"/>
 <text x="679" y="35" class="combo tap">RSHIFT</text>
 <text x="679" y="46" class="combo hold">sticky</text>
+</g>
+<g class="combo combopos-2">
+<rect rx="6" ry="6" x="154" y="29" width="28" height="26" class="combo"/>
+<text x="168" y="42" class="combo tap"><tspan style="font-size: 70%">&amp;caps_word</tspan></text>
+</g>
+<g class="combo combopos-3">
+<rect rx="6" ry="6" x="609" y="29" width="28" height="26" class="combo"/>
+<text x="623" y="42" class="combo tap"><tspan style="font-size: 70%">&amp;caps_word</tspan></text>
 </g>
 </g>
 </g>
@@ -779,6 +803,14 @@ path.combo {
 <text x="679" y="35" class="combo tap">RSHIFT</text>
 <text x="679" y="46" class="combo hold">sticky</text>
 </g>
+<g class="combo combopos-2">
+<rect rx="6" ry="6" x="154" y="29" width="28" height="26" class="combo"/>
+<text x="168" y="42" class="combo tap"><tspan style="font-size: 70%">&amp;caps_word</tspan></text>
+</g>
+<g class="combo combopos-3">
+<rect rx="6" ry="6" x="609" y="29" width="28" height="26" class="combo"/>
+<text x="623" y="42" class="combo tap"><tspan style="font-size: 70%">&amp;caps_word</tspan></text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 1367)" class="layer-sym">
@@ -922,6 +954,14 @@ path.combo {
 <rect rx="6" ry="6" x="665" y="22" width="28" height="26" class="combo"/>
 <text x="679" y="35" class="combo tap">RSHIFT</text>
 <text x="679" y="46" class="combo hold">sticky</text>
+</g>
+<g class="combo combopos-2">
+<rect rx="6" ry="6" x="154" y="29" width="28" height="26" class="combo"/>
+<text x="168" y="42" class="combo tap"><tspan style="font-size: 70%">&amp;caps_word</tspan></text>
+</g>
+<g class="combo combopos-3">
+<rect rx="6" ry="6" x="609" y="29" width="28" height="26" class="combo"/>
+<text x="623" y="42" class="combo tap"><tspan style="font-size: 70%">&amp;caps_word</tspan></text>
 </g>
 </g>
 </g>
@@ -1070,6 +1110,14 @@ path.combo {
 <text x="679" y="35" class="combo tap">RSHIFT</text>
 <text x="679" y="46" class="combo hold">sticky</text>
 </g>
+<g class="combo combopos-2">
+<rect rx="6" ry="6" x="154" y="29" width="28" height="26" class="combo"/>
+<text x="168" y="42" class="combo tap"><tspan style="font-size: 70%">&amp;caps_word</tspan></text>
+</g>
+<g class="combo combopos-3">
+<rect rx="6" ry="6" x="609" y="29" width="28" height="26" class="combo"/>
+<text x="623" y="42" class="combo tap"><tspan style="font-size: 70%">&amp;caps_word</tspan></text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 2050)" class="layer-media">
@@ -1211,6 +1259,14 @@ path.combo {
 <rect rx="6" ry="6" x="665" y="22" width="28" height="26" class="combo"/>
 <text x="679" y="35" class="combo tap">RSHIFT</text>
 <text x="679" y="46" class="combo hold">sticky</text>
+</g>
+<g class="combo combopos-2">
+<rect rx="6" ry="6" x="154" y="29" width="28" height="26" class="combo"/>
+<text x="168" y="42" class="combo tap"><tspan style="font-size: 70%">&amp;caps_word</tspan></text>
+</g>
+<g class="combo combopos-3">
+<rect rx="6" ry="6" x="609" y="29" width="28" height="26" class="combo"/>
+<text x="623" y="42" class="combo tap"><tspan style="font-size: 70%">&amp;caps_word</tspan></text>
 </g>
 </g>
 </g>

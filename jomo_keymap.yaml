@@ -84,3 +84,7 @@ combos:
   k: {t: LSHIFT, h: sticky}
 - p: [7, 8]
   k: {t: RSHIFT, h: sticky}
+- p: [2, 3]
+  k: '&caps_word'
+- p: [6, 7]
+  k: '&caps_word'
