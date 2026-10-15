@@ -69,6 +69,7 @@ func repeats(_ holdMs: Double) -> Int {
 
 var pressedAt: [Int: UInt64] = [:]
 var releasedAt: [Int: UInt64] = [:]
+var modEdgeAt: UInt64 = 0
 var presses = 0
 var flagged = 0
 
@@ -92,18 +93,29 @@ IOHIDManagerRegisterDeviceRemovalCallback(manager, { _, _, _, device in
 IOHIDManagerRegisterInputValueCallback(manager, { _, _, _, value in
     let element = IOHIDValueGetElement(value)
     let usage = Int(IOHIDElementGetUsage(element))
-    // Letters through keypad; modifiers never autorepeat, so they're skipped.
-    guard IOHIDElementGetUsagePage(element) == kHIDPage_KeyboardOrKeypad,
-          (0x04...0xA4).contains(usage) else { return }
+    guard IOHIDElementGetUsagePage(element) == kHIDPage_KeyboardOrKeypad else { return }
     let t = IOHIDValueGetTimeStamp(value)
+    // Modifiers never autorepeat; they're only tracked to spot keys like LC(A),
+    // whose modifier arrives in the same report.
+    if (0xE0...0xE7).contains(usage) {
+        modEdgeAt = t
+        return
+    }
+    // Letters through keypad.
+    guard (0x04...0xA4).contains(usage) else { return }
     let link = IOHIDDeviceGetProperty(IOHIDElementGetDevice(element), kIOHIDTransportKey as CFString) as? String == "USB" ? "USB" : "BLE"
     let name = "\(link)  \(keyName(usage))"
 
     if IOHIDValueGetIntegerValue(value) != 0 {
         presses += 1
+        // A macro tapping LC(A) twice re-presses A within ms; a switch can't add Ctrl.
         if let up = releasedAt[usage], ms(t - up) < chatterMs {
-            flagged += 1
-            write("CHATTER  \(name)  pressed again \(String(format: "%.1f", ms(t - up))) ms after release")
+            // The report's modifiers are delivered after its keys, so decide once it's all in.
+            DispatchQueue.main.async {
+                guard modEdgeAt != t else { return }
+                flagged += 1
+                write("CHATTER  \(name)  pressed again \(String(format: "%.1f", ms(t - up))) ms after release")
+            }
         }
         pressedAt[usage] = t
     } else if let down = pressedAt.removeValue(forKey: usage) {
