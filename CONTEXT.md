@@ -34,3 +34,19 @@ _Avoid_: double press, double tap, ghosting
 A switch producing more than one press/release pair for a single physical
 press.
 _Avoid_: double press, bounce
+
+## Tmux layer
+
+**Tmux layer**:
+Layer 1, held on the Backspace thumb; its right hand drives tmux in kitty. Here
+"window" always means a tmux window, never a macOS window.
+_Avoid_: tmux cockpit
+
+**Summoning key**:
+A tmux-layer key that brings kitty to the front (⌥T) before sending its tmux
+command, so it works from any app.
+
+**In-place key**:
+A tmux-layer key that acts on whatever has focus, without summoning kitty; the
+pane arrows.
+_Avoid_: plain key
