@@ -123,7 +123,7 @@
             bindings = <
                 &bootloader      &none           &none          &none           &none        &none        &none          &tmux_copy           &none           &none
                 &kp LSHIFT       &kp LCTRL       &kp LALT       &kp LGUI        &none        &none        &none          &kp LC(A)       &none           &none
-                &sys_reset       &none           &none          &none           &none        &none        &tmux N1       &tmux N2        &tmux N3        &none
+                &sys_reset       &none           &none          &none           &none        &none        &tmux N1       &tmux N2        &tmux N3        &tmux N4
                                                  &none          &none           &none        &none        &none          &none
             >;
         };
