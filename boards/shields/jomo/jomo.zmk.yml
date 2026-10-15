@@ -7,7 +7,6 @@ requires:
   - pro_micro
 features:
   - keys
-  - studio
 siblings:
   - jomo_left
   - jomo_right

@@ -9,12 +9,13 @@ by GitHub Actions.
 ## Build
 
 - Push (or open a PR / `workflow_dispatch`) and `.github/workflows/build.yml`
-  runs ZMK's reusable `build-user-config.yml@v0.2`. The firmware `.uf2` files
+  runs ZMK's reusable `build-user-config.yml@v0.3`. The firmware `.uf2` files
   are the run's artifacts. `gh run list` / `gh run watch` / `gh run download`
   to follow and fetch them.
-- `build.yaml` is the build matrix: `jomo_left` and `jomo_right` (both with
-  ZMK Studio over USB, artifacts `jomo_*_with_studio`) plus `settings_reset`.
-- ZMK is pinned to `v0.2` in both `config/west.yml` and the workflow; bump them
+- `build.yaml` is the build matrix: `jomo_left`, `jomo_right` and
+  `settings_reset`, built without ZMK Studio (artifacts use ZMK's default
+  names, e.g. `jomo_left-nice_nano_v2-zmk.uf2`).
+- ZMK is pinned to `v0.3` in both `config/west.yml` and the workflow; bump them
   together.
 
 ## Keymap diagram
@@ -38,7 +39,7 @@ The repo is both the ZMK config (`config/`) and a Zephyr module
 `config/`.
 
 - `jomo.dtsi` — shared kscan (col2row matrix) and the 10×4 matrix transform;
-  `jomo-layouts.dtsi` — physical layout (used by Studio and keymap-drawer).
+  `jomo-layouts.dtsi` — physical layout (required by ZMK, used by keymap-drawer).
 - `jomo_left.overlay` / `jomo_right.overlay` — per-half GPIO pins. The right
   half sets `col-offset = <5>`. Each half wires one row + one column as a
   soft-off wakeup source; those pins must stay in sync with the kscan pins.
