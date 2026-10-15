@@ -57,6 +57,15 @@
             hold-trigger-key-positions = <KEYS_L THUMBS_L>;
             hold-trigger-on-release;
         };
+        // Tap-preferred so rolling into a letter stays a shift, never the layer.
+        lts: layer_tap_shift {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            bindings = <&mo>, <&sk>;
+        };
     };
 };
 
@@ -95,16 +104,6 @@
 / {
     combos {
         compatible = "zmk,combos";
-        combo_lshift {
-            timeout-ms = <50>;
-            key-positions = <1 2>;
-            bindings = <&sk LSHIFT>;
-        };
-        combo_rshift {
-            timeout-ms = <50>;
-            key-positions = <7 8>;
-            bindings = <&sk RSHIFT>;
-        };
         // The idle guard keeps rolls like "would" and "value" from firing it.
         combo_caps_word_l {
             timeout-ms = <50>;
@@ -130,7 +129,7 @@
                 &kp Q            &kp W           &kp F          &kp P           &kp B        &kp J        &kp L          &kp U           &kp Y           &kp SQT
                 &hml LSHIFT A    &hml LCTRL R    &hml LALT S    &hml LGUI T     &kp G        &kp M        &hmr RGUI N    &hmr RALT E     &hmr RCTRL I    &hmr RSHIFT O
                 &kp Z            &kp X           &kp C          &kp D           &kp V        &kp K        &kp H          &kp COMMA       &kp DOT         &kp FSLH
-                                                 &ltl 1 BSPC    &ltl 2 SPACE    &ltl 3 TAB   &ltr 4 RET   &ltr 5 ESC     &ltr 6 DEL
+                                                 &ltl 1 BSPC    &ltl 2 SPACE    &ltl 3 TAB   &ltr 4 RET   &ltr 5 ESC     &lts 6 RSHIFT
             >;
         };
 

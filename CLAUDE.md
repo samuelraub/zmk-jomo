@@ -56,6 +56,9 @@ The repo is both the ZMK config (`config/`) and a Zephyr module
   (`ltl`/`ltr`). All four are custom hold-taps using positional
   `hold-trigger-key-positions` (opposite hand + thumbs) with
   `hold-trigger-on-release`; `QUICK_TAP_MS` is shared.
+- The outer right thumb (`lts`) taps a sticky shift, the board's main shift
+  for capitals, and holds the media layer. It is `tap-preferred` without
+  positional triggers, so rolling it into a letter never selects the layer.
 - Layers are indexed by position (`// Layer N` comments); each thumb key holds
   the layer with the same index (1 tmux … 6 media). Reordering layers means
   updating the `&ltl`/`&ltr` arguments.

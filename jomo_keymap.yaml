@@ -18,7 +18,7 @@ layers:
     - {t: TAB, h: ctl}
     - {t: RET, h: sym}
     - {t: ESC, h: num}
-    - {t: DEL, h: media}
+    - {t: RSHIFT, h: media}
   tmux:
   - ['&bootloader', '', '', '', '', '&tmux C', '&tmux Z', '&tmux Y', '&tmux S', '&tmux V']
   - [LSHIFT, LCTRL, LALT, LGUI, '', '&tmux_prefix', Ctl+LEFT, Ctl+DOWN, Ctl+UP, Ctl+RIGHT]
@@ -80,10 +80,6 @@ layers:
     - ''
     - {type: held}
 combos:
-- p: [1, 2]
-  k: {t: LSHIFT, h: sticky}
-- p: [7, 8]
-  k: {t: RSHIFT, h: sticky}
 - p: [2, 3]
   k: '&caps_word'
 - p: [6, 7]
