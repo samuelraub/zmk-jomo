@@ -57,3 +57,13 @@ _Avoid_: plain key
 The Finder paste that moves the copied files instead of duplicating them (⌥⌘V);
 Finder's stand-in for cutting files, which ⌘X does not do.
 _Avoid_: cut-paste, file cut
+
+## Shift
+
+**Sticky shift**:
+A shift that is tapped rather than held and applies to the next key only.
+_Avoid_: one-shot shift, oneshot
+
+**Home-row mod**:
+A home-row letter key that becomes a modifier (⇧ ⌃ ⌥ ⌘) when held.
+_Avoid_: HRM, mod-tap
