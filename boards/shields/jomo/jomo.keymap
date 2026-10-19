@@ -7,6 +7,7 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20
 
 #define QUICK_TAP_MS 175
+#define SHIFT_IDLE_MS 100  // 0 = never block shift; raise if a/o lag or stray capitals appear
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -35,6 +36,30 @@
             quick-tap-ms = <QUICK_TAP_MS>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS_L THUMBS_R>;
+            hold-trigger-on-release;
+        };
+        // Own idle guard so capitals right after Space still shift. No thumb
+        // triggers: a fast "to " would otherwise become Shift+Space.
+        hsl: home_row_shift_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <SHIFT_IDLE_MS>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R>;
+            hold-trigger-on-release;
+        };
+        hsr: home_row_shift_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <SHIFT_IDLE_MS>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L>;
             hold-trigger-on-release;
         };
         ltl: layer_tap_left {
@@ -127,7 +152,7 @@
         default_layer { // Layer 0
             bindings = <
                 &kp Q            &kp W           &kp F          &kp P           &kp B        &kp J        &kp L          &kp U           &kp Y           &kp SQT
-                &hml LSHIFT A    &hml LCTRL R    &hml LALT S    &hml LGUI T     &kp G        &kp M        &hmr RGUI N    &hmr RALT E     &hmr RCTRL I    &hmr RSHIFT O
+                &hsl LSHIFT A    &hml LCTRL R    &hml LALT S    &hml LGUI T     &kp G        &kp M        &hmr RGUI N    &hmr RALT E     &hmr RCTRL I    &hsr RSHIFT O
                 &kp Z            &kp X           &kp C          &kp D           &kp V        &kp K        &kp H          &kp COMMA       &kp DOT         &kp FSLH
                                                  &ltl 1 BSPC    &ltl 2 SPACE    &ltl 3 TAB   &ltr 4 RET   &ltr 5 ESC     &lts 6 RSHIFT
             >;

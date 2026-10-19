@@ -67,3 +67,9 @@ _Avoid_: one-shot shift, oneshot
 **Home-row mod**:
 A home-row letter key that becomes a modifier (⇧ ⌃ ⌥ ⌘) when held.
 _Avoid_: HRM, mod-tap
+
+**Pinky shift**:
+The shift home-row mods on A and O, used for capitals on the opposite hand.
+Unlike the other home-row mods they ignore thumb keys and shift right after
+typing.
+_Avoid_: HRM shift
