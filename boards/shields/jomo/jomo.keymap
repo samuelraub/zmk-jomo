@@ -166,7 +166,7 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         system {
-            if-layers = <3 4>;
+            if-layers = <1 5>;
             then-layer = <6>;
         };
     };
@@ -190,7 +190,7 @@
                 &none            &none           &none          &none           &none        &tmux C      &tmux Z        &tmux Y         &tmux S         &tmux V
                 &kp LSHIFT       &kp LCTRL       &kp LALT       &kp LGUI        &none        &tmux_prefix &kp LC(LEFT)   &kp LC(DOWN)    &kp LC(UP)      &kp LC(RIGHT)
                 &none            &none           &none          &none           &none        &tmux LC(A)  &tmux N1       &tmux N2        &tmux N3        &tmux N4
-                                                 &none          &none           &none        &none        &none          &none
+                                                 &none          &none           &none        &none        &trans         &none
             >;
         };
 
@@ -226,11 +226,11 @@
                 &kp LBKT         &kp N7          &kp N8         &kp N9          &kp RBKT     &none        &none          &none           &none           &none
                 &kp SEMI         &kp N4          &kp N5         &kp N6          &kp EQUAL    &none        &kp RGUI       &kp RALT        &kp RCTRL       &kp RSHIFT
                 &kp GRAVE        &kp N1          &kp N2         &kp N3          &kp BSLH     &none        &none          &kp COMMA       &kp DOT         &kp FSLH
-                                                 &none          &kp N0          &kp MINUS    &none        &none          &none
+                                                 &trans         &kp N0          &kp MINUS    &none        &none          &none
             >;
         };
 
-        system_layer { // Layer 6, Tab + Return held together
+        system_layer { // Layer 6, Backspace + Esc held together
             bindings = <
                 &bootloader      &none           &none          &none           &none        &none        &none          &none           &none           &bootloader
                 &soft_off        &none           &none          &none           &none        &none        &none          &none           &none           &bt BT_CLR_ALL

@@ -85,6 +85,6 @@ _Avoid_: leader layer
 ## System layer
 
 **System layer**:
-Layer 6, active while Tab and Return are both held; bootloader, reset and soft
+Layer 6, active while Backspace and Esc are both held; bootloader, reset and soft
 off. Each half's outer corners act on that half.
 _Avoid_: admin layer, adjust layer

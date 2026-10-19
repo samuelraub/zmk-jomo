@@ -68,8 +68,10 @@ The repo is both the ZMK config (`config/`) and a Zephyr module
 - Layers are indexed by position (`// Layer N` comments); each thumb key holds
   the layer with the same index (1 tmux … 5 num). Reordering layers means
   updating the `&ltl`/`&ltr` arguments and the conditional layer. Layer 6, the
-  system layer, is a conditional layer active while layers 3 and 4 are (Tab +
-  Return held).
+  system layer, is a conditional layer active while layers 1 and 5 are
+  (Backspace + Esc held). Each of those two thumbs is `&trans` on the other's
+  layer: ZMK resolves the second thumb on the layer the first one activated, so
+  a thumb that isn't transparent there never turns its own layer on.
 - Bootloader, reset and soft off act on the half whose key is pressed, so the
   system layer carries boot and reset on both halves' outer corners.
 - The layer-tap's own thumb on each layer is left as `&none` (shown as "held"
