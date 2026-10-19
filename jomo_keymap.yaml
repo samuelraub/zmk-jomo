@@ -20,9 +20,9 @@ layers:
     - {t: ESC, h: num}
     - {t: RSHIFT, h: media}
   tmux:
-  - ['&bootloader', '', '', '', '', '&tmux C', '&tmux Z', '&tmux Y', '&tmux S', '&tmux V']
+  - ['', '', '', '', '', '&tmux C', '&tmux Z', '&tmux Y', '&tmux S', '&tmux V']
   - [LSHIFT, LCTRL, LALT, LGUI, '', '&tmux_prefix', Ctl+LEFT, Ctl+DOWN, Ctl+UP, Ctl+RIGHT]
-  - ['&sys_reset', '', '', '', '', '&tmux LC(A)', '&tmux N1', '&tmux N2', '&tmux N3', '&tmux N4']
+  - ['', '', '', '', '', '&tmux LC(A)', '&tmux N1', '&tmux N2', '&tmux N3', '&tmux N4']
   - - {type: held}
     - ''
     - ''
@@ -40,9 +40,9 @@ layers:
     - ''
     - ''
   ctl:
-  - ['&soft_off', '', '', '', '', '', '', '', '', '']
+  - ['', '', '', '', '', '', '', '', '', '']
   - ['', '', '', '', '', '', '&msc SCRL_LEFT', '&msc SCRL_UP', '&msc SCRL_DOWN', '&msc SCRL_RIGHT']
-  - [BT CLR ALL, '', '', '', '', '', '&mmv MOVE_LEFT', '&mmv MOVE_DOWN', '&mmv MOVE_UP', '&mmv MOVE_RIGHT']
+  - ['', '', '', '', '', '', '&mmv MOVE_LEFT', '&mmv MOVE_DOWN', '&mmv MOVE_UP', '&mmv MOVE_RIGHT']
   - - ''
     - ''
     - {type: held}
@@ -70,15 +70,25 @@ layers:
     - {type: held}
     - ''
   media:
-  - ['', '', '', '', '', '', '', '', '', '&bootloader']
+  - ['', '', '', '', '', '', '', '', '', '']
   - [BRI DN, BRI UP, VOL DN, VOL UP, MUTE, '', RGUI, RALT, RCTRL, RSHIFT]
-  - ['', '', '', '', '', '', '', '', '', '&sys_reset']
+  - ['', '', '', '', '', '', '', '', '', '']
   - - ''
     - ''
     - ''
     - ''
     - ''
     - {type: held}
+  system:
+  - ['&bootloader', '', '', '', '', '', '', '', '', '&bootloader']
+  - ['&soft_off', '', '', '', '', '', '', '', '', BT CLR ALL]
+  - ['&sys_reset', '', '', '', '', '', '', '', '', '&sys_reset']
+  - - ''
+    - ''
+    - {type: held}
+    - {type: held}
+    - ''
+    - ''
 combos:
 - p: [2, 3]
   k: '&caps_word'
