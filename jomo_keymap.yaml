@@ -18,7 +18,7 @@ layers:
     - {t: TAB, h: ctl}
     - {t: RET, h: sym}
     - {t: ESC, h: num}
-    - {t: Leader, h: Hyper}
+    - {t: '&leader', h: Hyper+LGUI}
   tmux:
   - ['', '', '', '', '', '&tmux C', '&tmux Z', '&tmux Y', '&tmux S', '&tmux V']
   - [LSHIFT, LCTRL, LALT, LGUI, '', '&tmux_prefix', Ctl+LEFT, Ctl+DOWN, Ctl+UP, Ctl+RIGHT]
