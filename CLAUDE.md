@@ -94,8 +94,8 @@ bindings that switch apps should send these (`HYPER(<key>)`) rather than
 define new hotkeys.
 
 The trackit Alfred workflow (`~/dev/trackit.nvim/alfred`) binds F17 to the
-clock-in picker and F18 to clock out; the leader sequences `C I` / `C O` send
-them.
+clock-in picker, F18 to clock out and F19 to add a todo; the leader sequences
+`C I` / `C O` / `A T` send them.
 
 ## Agent skills
 
