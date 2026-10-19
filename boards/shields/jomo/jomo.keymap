@@ -187,7 +187,7 @@
 
         sym_layer { // Layer 4
             bindings = <
-                &kp LBRC         &kp AMPS        &kp STAR       &none           &kp RBRC     &none        &none          &none           &none           &none
+                &kp LBRC         &kp AMPS        &kp STAR       &kp QMARK       &kp RBRC     &none        &none          &none           &none           &none
                 &kp COLON        &kp DOLLAR      &kp PRCNT      &kp CARET       &kp PLUS     &none        &kp RGUI       &kp RALT        &kp RCTRL       &kp RSHIFT
                 &kp TILDE        &kp EXCL        &kp AT         &kp HASH        &kp PIPE     &none        &none          &none           &none           &none
                                                  &kp LPAR       &kp RPAR        &kp UNDER    &none        &none          &none
