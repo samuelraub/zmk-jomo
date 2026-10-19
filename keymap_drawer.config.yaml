@@ -1,4 +1,5 @@
 parse_config:
+  trans_legend: {t: $$mdi:triangle-down-outline$$, type: trans}
   modifier_fn_map:
     left_ctrl: ⌃
     right_ctrl: ⌃
