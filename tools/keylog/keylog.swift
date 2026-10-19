@@ -35,7 +35,9 @@ func ms(_ t: UInt64) -> Double {
 let stamp = DateFormatter()
 stamp.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
 
-FileManager.default.createFile(atPath: logPath, contents: nil)
+if !FileManager.default.fileExists(atPath: logPath) {
+    FileManager.default.createFile(atPath: logPath, contents: nil)
+}
 let log = FileHandle(forWritingAtPath: logPath)!
 log.seekToEndOfFile()
 func write(_ line: String) {
