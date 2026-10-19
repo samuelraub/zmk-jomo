@@ -790,6 +790,7 @@ path.combo {
 </g>
 <g transform="translate(196, 56)" class="key keypos-3">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">?</text>
 </g>
 <g transform="translate(252, 70)" class="key keypos-4">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
