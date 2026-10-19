@@ -43,7 +43,7 @@ Layer 1, held on the Backspace thumb; its right hand drives tmux in kitty. Here
 _Avoid_: tmux cockpit
 
 **Summoning key**:
-A tmux-layer key that brings kitty to the front (⌥T) before sending its tmux
+A tmux-layer key that brings kitty to the front (Hyper+T) before sending its tmux
 command, so it works from any app.
 
 **In-place key**:
@@ -60,10 +60,6 @@ _Avoid_: cut-paste, file cut
 
 ## Shift
 
-**Sticky shift**:
-A shift that is tapped rather than held and applies to the next key only.
-_Avoid_: one-shot shift, oneshot
-
 **Home-row mod**:
 A home-row letter key that becomes a modifier (⇧ ⌃ ⌥ ⌘) when held.
 _Avoid_: HRM, mod-tap
@@ -73,3 +69,22 @@ The shift home-row mods on A and O, used for capitals on the opposite hand.
 Unlike the other home-row mods they ignore thumb keys and shift right after
 typing.
 _Avoid_: HRM shift
+
+## Outer right thumb
+
+**Hyper**:
+All four modifiers at once (⌃⌥⇧⌘), held on the outer right thumb; Hyper + a
+key switches apps through Alfred.
+_Avoid_: meh, hyper key
+
+**Leader key**:
+The tap of the outer right thumb; the next few letters (a sequence) pick an
+action, and a key that fits no sequence cancels it and types normally.
+_Avoid_: leader layer
+
+## System layer
+
+**System layer**:
+Layer 6, active while Tab and Return are both held; bootloader, reset and soft
+off. Each half's outer corners act on that half.
+_Avoid_: admin layer, adjust layer

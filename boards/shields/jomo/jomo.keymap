@@ -7,6 +7,7 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20
 
 #define QUICK_TAP_MS 175
+#define HYPER(key) LC(LS(LA(LG(key))))  // Alfred's AppSwitcher hotkeys
 #define SHIFT_IDLE_MS 100  // 0 = never block shift; raise if a/o lag or stray capitals appear
 
 #include <behaviors.dtsi>
@@ -82,14 +83,26 @@
             hold-trigger-key-positions = <KEYS_L THUMBS_L>;
             hold-trigger-on-release;
         };
-        // Tap-preferred so rolling into a letter stays a shift, never the layer.
-        lts: layer_tap_shift {
+        // Taps never type text here, so any other key may pick the hold.
+        hyl: hyper_leader {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
+            flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            quick-tap-ms = <QUICK_TAP_MS>;
-            bindings = <&mo>, <&sk>;
+            bindings = <&kp>, <&leader>;
+        };
+        // F17/F18 are bound by the trackit Alfred workflow.
+        leader: leader {
+            compatible = "zmk,behavior-leader-key";
+            #binding-cells = <0>;
+            clock_in {
+                sequence = <C I>;
+                bindings = <&kp F17>;
+            };
+            clock_out {
+                sequence = <C O>;
+                bindings = <&kp F18>;
+            };
         };
     };
 };
@@ -101,7 +114,7 @@
             #binding-cells = <1>;
             wait-ms = <250>;
             bindings
-                = <&macro_tap &kp RA(T)>
+                = <&macro_tap &kp HYPER(T)>
                 , <&macro_wait_time 20>
                 , <&macro_tap &kp LC(A)>
                 , <&macro_param_1to1>
@@ -114,16 +127,12 @@
             #binding-cells = <0>;
             wait-ms = <250>;
             bindings
-                = <&macro_tap &kp RA(T)>
+                = <&macro_tap &kp HYPER(T)>
                 , <&macro_wait_time 20>
                 , <&macro_tap &kp LC(A)>
                 ;
         };
     };
-};
-
-&sk {
-    quick-release;
 };
 
 / {
@@ -150,7 +159,7 @@
         compatible = "zmk,conditional-layers";
         system {
             if-layers = <3 4>;
-            then-layer = <7>;
+            then-layer = <6>;
         };
     };
 };
@@ -164,7 +173,7 @@
                 &kp Q            &kp W           &kp F          &kp P           &kp B        &kp J        &kp L          &kp U           &kp Y           &kp SQT
                 &hsl LSHIFT A    &hml LCTRL R    &hml LALT S    &hml LGUI T     &kp G        &kp M        &hmr RGUI N    &hmr RALT E     &hmr RCTRL I    &hsr RSHIFT O
                 &kp Z            &kp X           &kp C          &kp D           &kp V        &kp K        &kp H          &kp COMMA       &kp DOT         &kp FSLH
-                                                 &ltl 1 BSPC    &ltl 2 SPACE    &ltl 3 TAB   &ltr 4 RET   &ltr 5 ESC     &lts 6 RSHIFT
+                                                 &ltl 1 BSPC    &ltl 2 SPACE    &ltl 3 TAB   &ltr 4 RET   &ltr 5 ESC     &hyl HYPER(LGUI) 0
             >;
         };
 
@@ -188,7 +197,7 @@
 
         ctl_layer { // Layer 3
             bindings = <
-                &none            &none           &none          &none           &none        &none        &none          &none           &none           &none
+                &none            &none           &none          &none           &none        &kp C_MUTE   &kp C_VOL_DN   &kp C_VOL_UP    &kp C_BRI_DN    &kp C_BRI_UP
                 &none            &none           &none          &none           &none        &none        &msc SCRL_LEFT &msc SCRL_UP    &msc SCRL_DOWN  &msc SCRL_RIGHT
                 &none            &none           &none          &none           &none        &none        &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_UP    &mmv MOVE_RIGHT
                                                  &none          &none           &none        &mkp MCLK    &mkp LCLK      &mkp RCLK
@@ -213,16 +222,7 @@
             >;
         };
 
-        media_layer { // Layer 6
-            bindings = <
-                &none            &none           &none          &none           &none        &none        &none          &none           &none           &none
-                &kp C_BRI_DN     &kp C_BRI_UP    &kp C_VOL_DN   &kp C_VOL_UP    &kp C_MUTE   &none        &kp RGUI       &kp RALT        &kp RCTRL       &kp RSHIFT
-                &none            &none           &none          &none           &none        &none        &none          &none           &none           &none
-                                                 &none          &none           &none        &none        &none          &none
-            >;
-        };
-
-        system_layer { // Layer 7, Tab + Return held together
+        system_layer { // Layer 6, Tab + Return held together
             bindings = <
                 &bootloader      &none           &none          &none           &none        &none        &none          &none           &none           &bootloader
                 &soft_off        &none           &none          &none           &none        &none        &none          &none           &none           &bt BT_CLR_ALL

@@ -1,0 +1,4 @@
+parse_config:
+  raw_binding_map:
+    "&leader": Leader
+    "&kp LC(LS(LA(LG(LGUI))))": Hyper

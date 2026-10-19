@@ -18,7 +18,7 @@ layers:
     - {t: TAB, h: ctl}
     - {t: RET, h: sym}
     - {t: ESC, h: num}
-    - {t: RSHIFT, h: media}
+    - {t: Leader, h: Hyper}
   tmux:
   - ['', '', '', '', '', '&tmux C', '&tmux Z', '&tmux Y', '&tmux S', '&tmux V']
   - [LSHIFT, LCTRL, LALT, LGUI, '', '&tmux_prefix', Ctl+LEFT, Ctl+DOWN, Ctl+UP, Ctl+RIGHT]
@@ -40,7 +40,7 @@ layers:
     - ''
     - ''
   ctl:
-  - ['', '', '', '', '', '', '', '', '', '']
+  - ['', '', '', '', '', MUTE, VOL DN, VOL UP, BRI DN, BRI UP]
   - ['', '', '', '', '', '', '&msc SCRL_LEFT', '&msc SCRL_UP', '&msc SCRL_DOWN', '&msc SCRL_RIGHT']
   - ['', '', '', '', '', '', '&mmv MOVE_LEFT', '&mmv MOVE_DOWN', '&mmv MOVE_UP', '&mmv MOVE_RIGHT']
   - - ''
@@ -69,16 +69,6 @@ layers:
     - ''
     - {type: held}
     - ''
-  media:
-  - ['', '', '', '', '', '', '', '', '', '']
-  - [BRI DN, BRI UP, VOL DN, VOL UP, MUTE, '', RGUI, RALT, RCTRL, RSHIFT]
-  - ['', '', '', '', '', '', '', '', '', '']
-  - - ''
-    - ''
-    - ''
-    - ''
-    - ''
-    - {type: held}
   system:
   - ['&bootloader', '', '', '', '', '', '', '', '', '&bootloader']
   - ['&soft_off', '', '', '', '', '', '', '', '', BT CLR ALL]
