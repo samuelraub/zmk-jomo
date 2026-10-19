@@ -1,4 +1,152 @@
 parse_config:
+  modifier_fn_map:
+    left_ctrl: ⌃
+    right_ctrl: ⌃
+    left_shift: ⇧
+    right_shift: ⇧
+    left_alt: ⌥
+    right_alt: ⌥
+    left_gui: ⌘
+    right_gui: ⌘
+    keycode_combiner: "{mods}{key}"
+    mod_combiner: "{mod_1}{mod_2}"
+  zmk_keycode_map:
+    # keymap-drawer's defaults: a configured map replaces them instead of extending them
+    EXCLAMATION: "!"
+    EXCL: "!"
+    AT_SIGN: "@"
+    AT: "@"
+    HASH: "#"
+    POUND: "#"
+    DOLLAR: "$"
+    DLLR: "$"
+    PERCENT: "%"
+    PRCNT: "%"
+    CARET: "^"
+    AMPERSAND: "&"
+    AMPS: "&"
+    ASTERISK: "*"
+    ASTRK: "*"
+    STAR: "*"
+    LEFT_PARENTHESIS: "("
+    LPAR: "("
+    RIGHT_PARENTHESIS: ")"
+    RPAR: ")"
+    EQUAL: "="
+    PLUS: "+"
+    MINUS: "-"
+    UNDERSCORE: "_"
+    UNDER: "_"
+    SLASH: "/"
+    FSLH: "/"
+    QUESTION: "?"
+    QMARK: "?"
+    BACKSLASH: "\\"
+    BSLH: "\\"
+    PIPE: "|"
+    NON_US_BACKSLASH: "\\"
+    PIPE2: "|"
+    NON_US_BSLH: "|"
+    SEMICOLON: ";"
+    SEMI: ";"
+    COLON: ":"
+    SINGLE_QUOTE: "'"
+    SQT: "'"
+    APOSTROPHE: "'"
+    APOS: "'"
+    DOUBLE_QUOTES: "\""
+    DQT: "\""
+    COMMA: ","
+    LESS_THAN: "<"
+    LT: "<"
+    PERIOD: "."
+    DOT: "."
+    GREATER_THAN: ">"
+    GT: ">"
+    LEFT_BRACKET: "["
+    LBKT: "["
+    LEFT_BRACE: "{"
+    LBRC: "{"
+    RIGHT_BRACKET: "]"
+    RBKT: "]"
+    RIGHT_BRACE: "}"
+    RBRC: "}"
+    GRAVE: "`"
+    TILDE: "~"
+    NON_US_HASH: "#"
+    NUHS: "#"
+    TILDE2: "~"
+    # ours
+    LSHIFT: $$mdi:apple-keyboard-shift$$
+    RSHIFT: $$mdi:apple-keyboard-shift$$
+    LCTRL: $$mdi:apple-keyboard-control$$
+    RCTRL: $$mdi:apple-keyboard-control$$
+    LALT: $$mdi:apple-keyboard-option$$
+    RALT: $$mdi:apple-keyboard-option$$
+    LGUI: $$mdi:apple-keyboard-command$$
+    RGUI: $$mdi:apple-keyboard-command$$
+    LEFT: ←
+    DOWN: ↓
+    UP: ↑
+    RIGHT: →
+    BSPC: $$mdi:backspace-outline$$
+    SPACE: $$mdi:keyboard-space$$
+    TAB: $$mdi:keyboard-tab$$
+    RET: $$mdi:keyboard-return$$
+    ESC: Esc
+    PG_UP: PgUp
+    PG_DN: PgDn
+    C_MUTE: $$mdi:volume-off$$
+    C_VOL_DN: $$mdi:volume-minus$$
+    C_VOL_UP: $$mdi:volume-plus$$
+    C_BRI_DN: $$mdi:brightness-5$$
+    C_BRI_UP: $$mdi:brightness-7$$
   raw_binding_map:
     "&leader": Leader
     "&kp LC(LS(LA(LG(LGUI))))": Hyper
+    "&caps_word": Caps Word
+    # tmux layer
+    "&tmux_prefix": Prefix
+    "&tmux C": New win
+    "&tmux Z": Zoom
+    "&tmux Y": Copy
+    "&tmux S": Split ↓
+    "&tmux V": Split →
+    "&tmux LC(A)": Last win
+    "&tmux N1": {t: "1", h: win}
+    "&tmux N2": {t: "2", h: win}
+    "&tmux N3": {t: "3", h: win}
+    "&tmux N4": {t: "4", h: win}
+    "&kp LC(LEFT)": {t: ←, h: pane}
+    "&kp LC(DOWN)": {t: ↓, h: pane}
+    "&kp LC(UP)": {t: ↑, h: pane}
+    "&kp LC(RIGHT)": {t: →, h: pane}
+    # nav layer
+    "&kp RG(Z)": Undo
+    "&kp RG(V)": Paste
+    "&kp RG(C)": Copy
+    "&kp RG(X)": Cut
+    "&kp RG(LS(Z))": Redo
+    "&kp RA(RG(V))": Move paste
+    # ctl layer
+    "&msc SCRL_LEFT": {t: ←, h: scroll}
+    "&msc SCRL_UP": {t: ↑, h: scroll}
+    "&msc SCRL_DOWN": {t: ↓, h: scroll}
+    "&msc SCRL_RIGHT": {t: →, h: scroll}
+    "&mmv MOVE_LEFT": {t: ←, h: mouse}
+    "&mmv MOVE_DOWN": {t: ↓, h: mouse}
+    "&mmv MOVE_UP": {t: ↑, h: mouse}
+    "&mmv MOVE_RIGHT": {t: →, h: mouse}
+    "&mkp MCLK": {t: Middle, h: click}
+    "&mkp LCLK": {t: Left, h: click}
+    "&mkp RCLK": {t: Right, h: click}
+    # system layer
+    "&bootloader": Boot
+    "&sys_reset": Reset
+    "&soft_off": Soft off
+    "&bt BT_CLR_ALL": BT clear
+  zmk_combos:
+    combo_caps_word_l: {l: [default]}
+    combo_caps_word_r: {l: [default]}
+draw_config:
+  dark_mode: auto

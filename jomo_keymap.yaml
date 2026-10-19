@@ -2,27 +2,45 @@ layout: {zmk_keyboard: jomo}
 layers:
   default:
   - [Q, W, F, P, B, J, L, U, Y, '''']
-  - - {t: A, h: LSHIFT}
-    - {t: R, h: LCTRL}
-    - {t: S, h: LALT}
-    - {t: T, h: LGUI}
+  - - {t: A, h: '$$mdi:apple-keyboard-shift$$'}
+    - {t: R, h: '$$mdi:apple-keyboard-control$$'}
+    - {t: S, h: '$$mdi:apple-keyboard-option$$'}
+    - {t: T, h: '$$mdi:apple-keyboard-command$$'}
     - G
     - M
-    - {t: N, h: RGUI}
-    - {t: E, h: RALT}
-    - {t: I, h: RCTRL}
-    - {t: O, h: RSHIFT}
+    - {t: N, h: '$$mdi:apple-keyboard-command$$'}
+    - {t: E, h: '$$mdi:apple-keyboard-option$$'}
+    - {t: I, h: '$$mdi:apple-keyboard-control$$'}
+    - {t: O, h: '$$mdi:apple-keyboard-shift$$'}
   - [Z, X, C, D, V, K, H, ',', ., /]
-  - - {t: BSPC, h: tmux}
-    - {t: SPACE, h: nav}
-    - {t: TAB, h: ctl}
-    - {t: RET, h: sym}
-    - {t: ESC, h: num}
-    - {t: '&leader', h: Hyper+LGUI}
+  - - {t: '$$mdi:backspace-outline$$', h: tmux}
+    - {t: '$$mdi:keyboard-space$$', h: nav}
+    - {t: '$$mdi:keyboard-tab$$', h: ctl}
+    - {t: '$$mdi:keyboard-return$$', h: sym}
+    - {t: Esc, h: num}
+    - {t: Leader, h: Hyper}
   tmux:
-  - ['', '', '', '', '', '&tmux C', '&tmux Z', '&tmux Y', '&tmux S', '&tmux V']
-  - [LSHIFT, LCTRL, LALT, LGUI, '', '&tmux_prefix', Ctl+LEFT, Ctl+DOWN, Ctl+UP, Ctl+RIGHT]
-  - ['', '', '', '', '', '&tmux LC(A)', '&tmux N1', '&tmux N2', '&tmux N3', '&tmux N4']
+  - ['', '', '', '', '', New win, Zoom, Copy, Split ↓, Split →]
+  - - $$mdi:apple-keyboard-shift$$
+    - $$mdi:apple-keyboard-control$$
+    - $$mdi:apple-keyboard-option$$
+    - $$mdi:apple-keyboard-command$$
+    - ''
+    - Prefix
+    - {t: ←, h: pane}
+    - {t: ↓, h: pane}
+    - {t: ↑, h: pane}
+    - {t: →, h: pane}
+  - - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - Last win
+    - {t: '1', h: win}
+    - {t: '2', h: win}
+    - {t: '3', h: win}
+    - {t: '4', h: win}
   - - {type: held}
     - ''
     - ''
@@ -30,9 +48,10 @@ layers:
     - ''
     - ''
   nav:
-  - ['', '', '', '', '', Gui+Z, Gui+V, Gui+C, Gui+X, Gui+Sft+Z]
-  - [LSHIFT, LCTRL, LALT, LGUI, '', '&caps_word', LEFT, DOWN, UP, RIGHT]
-  - ['', '', '', '', '', '', AltGr+Gui+V, PG DN, PG UP, '']
+  - ['', '', '', '', '', Undo, Paste, Copy, Cut, Redo]
+  - ['$$mdi:apple-keyboard-shift$$', '$$mdi:apple-keyboard-control$$', '$$mdi:apple-keyboard-option$$', '$$mdi:apple-keyboard-command$$', '', Caps Word, ←, ↓, ↑,
+    →]
+  - ['', '', '', '', '', '', Move paste, PgDn, PgUp, '']
   - - ''
     - {type: held}
     - ''
@@ -40,18 +59,36 @@ layers:
     - ''
     - ''
   ctl:
-  - ['', '', '', '', '', MUTE, VOL DN, VOL UP, BRI DN, BRI UP]
-  - ['', '', '', '', '', '', '&msc SCRL_LEFT', '&msc SCRL_UP', '&msc SCRL_DOWN', '&msc SCRL_RIGHT']
-  - ['', '', '', '', '', '', '&mmv MOVE_LEFT', '&mmv MOVE_DOWN', '&mmv MOVE_UP', '&mmv MOVE_RIGHT']
+  - ['', '', '', '', '', '$$mdi:volume-off$$', '$$mdi:volume-minus$$', '$$mdi:volume-plus$$', '$$mdi:brightness-5$$', '$$mdi:brightness-7$$']
+  - - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - {t: ←, h: scroll}
+    - {t: ↑, h: scroll}
+    - {t: ↓, h: scroll}
+    - {t: →, h: scroll}
+  - - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - {t: ←, h: mouse}
+    - {t: ↓, h: mouse}
+    - {t: ↑, h: mouse}
+    - {t: →, h: mouse}
   - - ''
     - ''
     - {type: held}
-    - '&mkp MCLK'
-    - '&mkp LCLK'
-    - '&mkp RCLK'
+    - {t: Middle, h: click}
+    - {t: Left, h: click}
+    - {t: Right, h: click}
   sym:
   - ['{', '&', '*', '?', '}', '', '', '', '', '']
-  - [':', $, '%', ^, +, '', RGUI, RALT, RCTRL, RSHIFT]
+  - [':', $, '%', ^, +, '', '$$mdi:apple-keyboard-command$$', '$$mdi:apple-keyboard-option$$', '$$mdi:apple-keyboard-control$$', '$$mdi:apple-keyboard-shift$$']
   - ['~', '!', '@', '#', '|', '', '', '', '', '']
   - - (
     - )
@@ -61,7 +98,7 @@ layers:
     - ''
   num:
   - ['[', '7', '8', '9', ']', '', '', '', '', '']
-  - [;, '4', '5', '6', '=', '', RGUI, RALT, RCTRL, RSHIFT]
+  - [;, '4', '5', '6', '=', '', '$$mdi:apple-keyboard-command$$', '$$mdi:apple-keyboard-option$$', '$$mdi:apple-keyboard-control$$', '$$mdi:apple-keyboard-shift$$']
   - ['`', '1', '2', '3', \, '', '', ',', ., /]
   - - ''
     - '0'
@@ -70,9 +107,9 @@ layers:
     - {type: held}
     - ''
   system:
-  - ['&bootloader', '', '', '', '', '', '', '', '', '&bootloader']
-  - ['&soft_off', '', '', '', '', '', '', '', '', BT CLR ALL]
-  - ['&sys_reset', '', '', '', '', '', '', '', '', '&sys_reset']
+  - [Boot, '', '', '', '', '', '', '', '', Boot]
+  - [Soft off, '', '', '', '', '', '', '', '', BT clear]
+  - [Reset, '', '', '', '', '', '', '', '', Reset]
   - - ''
     - ''
     - {type: held}
@@ -81,6 +118,8 @@ layers:
     - ''
 combos:
 - p: [2, 3]
-  k: '&caps_word'
+  k: Caps Word
+  l: [default]
 - p: [6, 7]
-  k: '&caps_word'
+  k: Caps Word
+  l: [default]
