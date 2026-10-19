@@ -110,3 +110,8 @@ The five default labels: `needs-triage`, `needs-info`, `ready-for-agent`, `ready
 ### Domain docs
 
 Single-context: one `CONTEXT.md` and `docs/adr/` at the repo root. See `docs/agents/domain.md`.
+
+<!-- claude-reflect: learned rules (saved from the band; edit freely) -->
+## Learned rules
+- Treat this keyboard as a self-designed, self-assembled PCB using Choc Sunset Tactile switches in hotswap sockets.
+<!-- end claude-reflect -->
