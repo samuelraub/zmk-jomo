@@ -85,10 +85,10 @@ parse_config:
     RALT: $$mdi:apple-keyboard-option$$
     LGUI: $$mdi:apple-keyboard-command$$
     RGUI: $$mdi:apple-keyboard-command$$
-    LEFT: ←
-    DOWN: ↓
-    UP: ↑
-    RIGHT: →
+    LEFT: $$mdi:arrow-left$$
+    DOWN: $$mdi:arrow-down$$
+    UP: $$mdi:arrow-up$$
+    RIGHT: $$mdi:arrow-right$$
     BSPC: $$mdi:backspace-outline$$
     SPACE: $$mdi:keyboard-space$$
     TAB: $$mdi:keyboard-tab$$
@@ -110,17 +110,17 @@ parse_config:
     "&tmux C": New win
     "&tmux Z": Zoom
     "&tmux Y": Copy
-    "&tmux S": Split ↓
-    "&tmux V": Split →
+    "&tmux S": {t: $$mdi:arrow-split-horizontal$$, h: split}
+    "&tmux V": {t: $$mdi:arrow-split-vertical$$, h: split}
     "&tmux LC(A)": Last win
     "&tmux N1": {t: "1", h: win}
     "&tmux N2": {t: "2", h: win}
     "&tmux N3": {t: "3", h: win}
     "&tmux N4": {t: "4", h: win}
-    "&kp LC(LEFT)": {t: ←, h: pane}
-    "&kp LC(DOWN)": {t: ↓, h: pane}
-    "&kp LC(UP)": {t: ↑, h: pane}
-    "&kp LC(RIGHT)": {t: →, h: pane}
+    "&kp LC(LEFT)": {t: $$mdi:arrow-left$$, h: pane}
+    "&kp LC(DOWN)": {t: $$mdi:arrow-down$$, h: pane}
+    "&kp LC(UP)": {t: $$mdi:arrow-up$$, h: pane}
+    "&kp LC(RIGHT)": {t: $$mdi:arrow-right$$, h: pane}
     # nav layer
     "&kp RG(Z)": Undo
     "&kp RG(V)": Paste
@@ -129,14 +129,14 @@ parse_config:
     "&kp RG(LS(Z))": Redo
     "&kp RA(RG(V))": Move paste
     # ctl layer
-    "&msc SCRL_LEFT": {t: ←, h: scroll}
-    "&msc SCRL_UP": {t: ↑, h: scroll}
-    "&msc SCRL_DOWN": {t: ↓, h: scroll}
-    "&msc SCRL_RIGHT": {t: →, h: scroll}
-    "&mmv MOVE_LEFT": {t: ←, h: mouse}
-    "&mmv MOVE_DOWN": {t: ↓, h: mouse}
-    "&mmv MOVE_UP": {t: ↑, h: mouse}
-    "&mmv MOVE_RIGHT": {t: →, h: mouse}
+    "&msc SCRL_LEFT": {t: $$mdi:arrow-left$$, h: scroll}
+    "&msc SCRL_UP": {t: $$mdi:arrow-up$$, h: scroll}
+    "&msc SCRL_DOWN": {t: $$mdi:arrow-down$$, h: scroll}
+    "&msc SCRL_RIGHT": {t: $$mdi:arrow-right$$, h: scroll}
+    "&mmv MOVE_LEFT": {t: $$mdi:arrow-left$$, h: mouse}
+    "&mmv MOVE_DOWN": {t: $$mdi:arrow-down$$, h: mouse}
+    "&mmv MOVE_UP": {t: $$mdi:arrow-up$$, h: mouse}
+    "&mmv MOVE_RIGHT": {t: $$mdi:arrow-right$$, h: mouse}
     "&mkp MCLK": {t: Middle, h: click}
     "&mkp LCLK": {t: Left, h: click}
     "&mkp RCLK": {t: Right, h: click}

@@ -20,17 +20,26 @@ layers:
     - {t: Esc, h: num}
     - {t: Leader, h: Hyper}
   tmux:
-  - ['', '', '', '', '', New win, Zoom, Copy, Split ↓, Split →]
+  - - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - New win
+    - Zoom
+    - Copy
+    - {t: '$$mdi:arrow-split-horizontal$$', h: split}
+    - {t: '$$mdi:arrow-split-vertical$$', h: split}
   - - $$mdi:apple-keyboard-shift$$
     - $$mdi:apple-keyboard-control$$
     - $$mdi:apple-keyboard-option$$
     - $$mdi:apple-keyboard-command$$
     - ''
     - Prefix
-    - {t: ←, h: pane}
-    - {t: ↓, h: pane}
-    - {t: ↑, h: pane}
-    - {t: →, h: pane}
+    - {t: '$$mdi:arrow-left$$', h: pane}
+    - {t: '$$mdi:arrow-down$$', h: pane}
+    - {t: '$$mdi:arrow-up$$', h: pane}
+    - {t: '$$mdi:arrow-right$$', h: pane}
   - - ''
     - ''
     - ''
@@ -49,8 +58,8 @@ layers:
     - ''
   nav:
   - ['', '', '', '', '', Undo, Paste, Copy, Cut, Redo]
-  - ['$$mdi:apple-keyboard-shift$$', '$$mdi:apple-keyboard-control$$', '$$mdi:apple-keyboard-option$$', '$$mdi:apple-keyboard-command$$', '', Caps Word, ←, ↓, ↑,
-    →]
+  - ['$$mdi:apple-keyboard-shift$$', '$$mdi:apple-keyboard-control$$', '$$mdi:apple-keyboard-option$$', '$$mdi:apple-keyboard-command$$', '', Caps Word, '$$mdi:arrow-left$$',
+    '$$mdi:arrow-down$$', '$$mdi:arrow-up$$', '$$mdi:arrow-right$$']
   - ['', '', '', '', '', '', Move paste, PgDn, PgUp, '']
   - - ''
     - {type: held}
@@ -66,20 +75,20 @@ layers:
     - ''
     - ''
     - ''
-    - {t: ←, h: scroll}
-    - {t: ↑, h: scroll}
-    - {t: ↓, h: scroll}
-    - {t: →, h: scroll}
+    - {t: '$$mdi:arrow-left$$', h: scroll}
+    - {t: '$$mdi:arrow-up$$', h: scroll}
+    - {t: '$$mdi:arrow-down$$', h: scroll}
+    - {t: '$$mdi:arrow-right$$', h: scroll}
   - - ''
     - ''
     - ''
     - ''
     - ''
     - ''
-    - {t: ←, h: mouse}
-    - {t: ↓, h: mouse}
-    - {t: ↑, h: mouse}
-    - {t: →, h: mouse}
+    - {t: '$$mdi:arrow-left$$', h: mouse}
+    - {t: '$$mdi:arrow-down$$', h: mouse}
+    - {t: '$$mdi:arrow-up$$', h: mouse}
+    - {t: '$$mdi:arrow-right$$', h: mouse}
   - - ''
     - ''
     - {type: held}
