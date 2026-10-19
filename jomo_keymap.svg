@@ -287,8 +287,8 @@ path.combo {
 </a></g>
 <g transform="translate(595, 238)" class="key keypos-35">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">Leader</text>
-<text x="0" y="24" class="key hold">Hyper</text>
+<text x="0" y="0" class="key tap">&amp;leader</text>
+<text x="0" y="24" class="key hold"><tspan style="font-size: 70%">Hyper+LGUI</tspan></text>
 </g>
 <g class="combo combopos-0">
 <rect rx="6" ry="6" x="154" y="29" width="28" height="26" class="combo"/>
