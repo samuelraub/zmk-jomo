@@ -103,6 +103,14 @@
                 sequence = <C O>;
                 bindings = <&kp F18>;
             };
+            screenshot_copy {
+                sequence = <S C>;
+                bindings = <&kp LC(LS(LG(N4)))>;
+            };
+            screenshot_save {
+                sequence = <S S>;
+                bindings = <&kp LS(LG(N4))>;
+            };
         };
     };
 };
