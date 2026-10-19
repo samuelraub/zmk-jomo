@@ -16,7 +16,8 @@ by GitHub Actions.
   `settings_reset`, built without ZMK Studio (artifacts use ZMK's default
   names, e.g. `jomo_left-nice_nano_v2-zmk.uf2`).
 - ZMK is pinned to `v0.3` in both `config/west.yml` and the workflow; bump them
-  together.
+  together. urob's `zmk-leader-key` module follows the same `defaults:
+  revision`, so its tag has to match the ZMK release.
 
 ## Keymap diagram
 
@@ -25,11 +26,13 @@ keymap-drawer (`keymap`, installed via pipx). Regenerate both after any keymap
 change:
 
 ```sh
-keymap parse -c 10 -z boards/shields/jomo/jomo.keymap > jomo_keymap.yaml
-keymap draw -d boards/shields/jomo/jomo-layouts.dtsi jomo_keymap.yaml > jomo_keymap.svg
+keymap -c keymap_drawer.config.yaml parse -c 10 -z boards/shields/jomo/jomo.keymap > jomo_keymap.yaml
+keymap -c keymap_drawer.config.yaml draw -d boards/shields/jomo/jomo-layouts.dtsi jomo_keymap.yaml > jomo_keymap.svg
 ```
 
-`-d` is required: keymap-drawer has no built-in layout for `jomo`.
+`-d` is required: keymap-drawer has no built-in layout for `jomo`. The config
+gives the leader and Hyper legends; keymap-drawer doesn't show leader
+sequences, so the README lists them.
 
 ## Layout of the config
 
@@ -56,29 +59,41 @@ The repo is both the ZMK config (`config/`) and a Zephyr module
   (`ltl`/`ltr`). All four are custom hold-taps using positional
   `hold-trigger-key-positions` (opposite hand + thumbs) with
   `hold-trigger-on-release`; `QUICK_TAP_MS` is shared.
-- The outer right thumb (`lts`) taps a sticky shift, the board's main shift
-  for capitals, and holds the media layer. It is `tap-preferred` without
-  positional triggers, so rolling it into a letter never selects the layer.
+- Capitals come from the pinky shifts (`hsl`/`hsr` on A and O): like
+  `hml`/`hmr`, but with the shorter `SHIFT_IDLE_MS` guard and no thumb
+  triggers, so a fast "to " isn't turned into Shift+Space.
+- The outer right thumb (`hyl`) holds Hyper and taps the leader key
+  (`&leader`, sequences defined in its child nodes). It is `hold-preferred`
+  without positional triggers: its taps never type text.
 - Layers are indexed by position (`// Layer N` comments); each thumb key holds
-  the layer with the same index (1 tmux … 6 media). Reordering layers means
-  updating the `&ltl`/`&ltr` arguments.
+  the layer with the same index (1 tmux … 5 num). Reordering layers means
+  updating the `&ltl`/`&ltr` arguments and the conditional layer. Layer 6, the
+  system layer, is a conditional layer active while layers 3 and 4 are (Tab +
+  Return held).
+- Bootloader, reset and soft off act on the half whose key is pressed, so the
+  system layer carries boot and reset on both halves' outer corners.
 - The layer-tap's own thumb on each layer is left as `&none` (shown as "held"
   in the diagram).
 - The `&tmux`/`&tmux_prefix` macros (summoning keys, see `CONTEXT.md`) send
-  `RA(T)` first, then the `C-a` prefix. ⌥T is an Alfred hotkey (AppSwitcher
-  workflow) that focuses kitty, so they work from any app. The pane arrows are
-  in-place keys: plain `C-arrow`, which vim-tmux-navigator routes across nvim
-  splits and tmux panes; skipping ⌥T avoids its ~250 ms wait.
+  `HYPER(T)` first, then the `C-a` prefix. Hyper+T is an Alfred hotkey
+  (AppSwitcher workflow) that focuses kitty, so they work from any app. The
+  pane arrows are in-place keys: plain `C-arrow`, which vim-tmux-navigator
+  routes across nvim splits and tmux panes; skipping Hyper+T avoids its
+  ~250 ms wait.
 - The tmux layer is right-hand only: `ltl` counts only right-hand keys as hold
   triggers, so a quick left-hand tap under it resolves to the thumb's tap.
 
 ## Host-side setup (macOS)
 
-Alfred's AppSwitcher workflow binds ⌥+key to launch/focus an app: ⌥T kitty,
-⌥G Chrome, ⌥B Firefox, ⌥F Finder, ⌥C Calendar, ⌥M Thunderbird, ⌥L Signal,
-⌥1 1Password. Keymap bindings that switch apps should send these (`RA(<key>)`)
-rather than define new hotkeys. With the opposite-hand home-row mods, ⌥ for a
-left-hand letter comes from the right hand (hold E) and vice versa (hold S).
+Alfred's AppSwitcher workflow binds Hyper (⌃⌥⇧⌘) + key to launch/focus an
+app: T kitty, G Chrome, B Firefox, F Finder, C Calendar, M Thunderbird,
+L Signal, 1 1Password. Hold the outer right thumb and press the key. Keymap
+bindings that switch apps should send these (`HYPER(<key>)`) rather than
+define new hotkeys.
+
+The trackit Alfred workflow (`~/dev/trackit.nvim/alfred`) binds F17 to the
+clock-in picker and F18 to clock out; the leader sequences `C I` / `C O` send
+them.
 
 ## Agent skills
 
