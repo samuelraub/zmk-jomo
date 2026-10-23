@@ -132,3 +132,6 @@ combos:
 - p: [6, 7]
   k: Caps Word
   l: [default]
+- p: [8, 9]
+  k: Kill pane
+  l: [tmux]

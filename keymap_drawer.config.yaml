@@ -118,6 +118,7 @@ parse_config:
     "&tmux N2": {t: "2", h: win}
     "&tmux N3": {t: "3", h: win}
     "&tmux N4": {t: "4", h: win}
+    "&tmux X": Kill pane
     "&kp LC(LEFT)": {t: $$mdi:arrow-left$$, h: pane}
     "&kp LC(DOWN)": {t: $$mdi:arrow-down$$, h: pane}
     "&kp LC(UP)": {t: $$mdi:arrow-up$$, h: pane}

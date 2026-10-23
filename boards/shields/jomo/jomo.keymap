@@ -167,6 +167,13 @@
             key-positions = <6 7>;
             bindings = <&caps_word>;
         };
+        // Both split keys together undo a split.
+        combo_kill_pane {
+            timeout-ms = <50>;
+            key-positions = <8 9>;
+            layers = <1>;
+            bindings = <&tmux X>;
+        };
     };
 };
 
