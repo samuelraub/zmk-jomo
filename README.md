@@ -11,6 +11,6 @@ Tap the outer right thumb, then type the sequence.
 | `C I`    | Clock in (Trackit picker, F17)              |
 | `C O`    | Clock out (Trackit, F18)                    |
 | `A T`    | Add a todo (Trackit, F19)                   |
-| `A N`    | Add a note (Trackit, F20)                   |
+| `A N`    | Add a note (Trackit, F16)                   |
 | `S C`    | Screenshot a region to the clipboard (⌃⇧⌘4) |
 | `S S`    | Screenshot a region to a file (⇧⌘4)         |

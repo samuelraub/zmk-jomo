@@ -91,7 +91,7 @@
             tapping-term-ms = <200>;
             bindings = <&kp>, <&leader>;
         };
-        // F17-F20 are bound by the trackit Alfred workflow.
+        // F16-F19 are bound by the trackit Alfred workflow.
         leader: leader {
             compatible = "zmk,behavior-leader-key";
             #binding-cells = <0>;
@@ -109,7 +109,7 @@
             };
             add_note {
                 sequence = <A N>;
-                bindings = <&kp F20>;
+                bindings = <&kp F16>;
             };
             screenshot_copy {
                 sequence = <S C>;
